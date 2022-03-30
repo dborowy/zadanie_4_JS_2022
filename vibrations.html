@@ -10,13 +10,13 @@
         <title>SOS wibracje</title>
     </head>
     <body>
-        <div class="container">
+        <div style="width: 100vh; height: 100vh; align-items: center; justify-content: center; display: flex;" class="container-fluid" >
+            <br>
             <button type="button" class="btn btn-primary" onclick="vibrate()">SOS</button>
         </div>
     </body>
     <script>
         function vibrate(){
-            //navigator.vibrate(200);
             navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
         }
         
