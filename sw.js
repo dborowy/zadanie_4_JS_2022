@@ -1,9 +1,10 @@
 var cacheName = 'zad-4';
+var GHPATH = '/zadanie_4_JS_2022';
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/main.js'
+  `${GHPATH}/`,
+  `${GHPATH}/index.html`,
+  `${GHPATH}/css/style.css`,
+  `${GHPATH}/js/main.js`
 ];
 
 /* Start the service worker and cache all of the app's content */
