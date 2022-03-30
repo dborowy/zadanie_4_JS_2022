@@ -1,6 +1,6 @@
 {
-  "name": "Hello World",
-  "short_name": "Hello",
+  "name": "Zadanie-4",
+  "short_name": "Zad4",
   "icons": [{
     "src": "images/globe_icon.svg",
       "sizes": "any"
