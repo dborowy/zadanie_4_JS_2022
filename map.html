@@ -20,16 +20,15 @@
             <h1>Find your location</h1>
             <button class="btn btn-primary btn-block" id="find-me">Show my location</button><br />
             <p id="status"></p>
-            <a class="btn btn-primary stretched-link invisible" id="map-link"></a>
             <div id="map" class="container" style="width: 900px; height: 580px"></div>
+            <a class="btn btn-primary stretched-link invisible" id="map-link"></a>
+
         </div>
 
 
 
         
-        <script>
-
-        </script>
+    </div>
 </body>
 
 
@@ -67,7 +66,7 @@
 
             status.textContent = '';
             mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-            mapLink.textContent += ` Go to location: Latitude: ${latitude} °, Longitude: ${longitude} °`;
+            mapLink.textContent += `Open in new tab: Latitude: ${latitude} °, Longitude: ${longitude} °`;
             mapLink.classList.remove("invisible");
         }
 
