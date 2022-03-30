@@ -1,9 +1,10 @@
 {
-  "name": "Zadanie-4",
-  "short_name": "Zad4",
+  "name": "Hello World",
+  "short_name": "Hello",
   "icons": [{
-    "src": "images/globe_icon.svg",
-      "sizes": "any"
+      "src": "images/globe-icon.svg",
+      "sizes": "any",
+      "type": "image/png"
     }],
   "lang": "en-US",
   "start_url": "/index.html",
