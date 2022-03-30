@@ -3,48 +3,60 @@
 
 <head>
     <title>Page Title</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <button id="find-me">Show my location</button><br />
-    <p id="status"></p>
-    <a id="map-link" target="_blank"></a>
-    
-    
-    <script>
-        function geoFindMe() {
+    <div class="container" style="text-align: center;">
+        <div class="center">
+        <h1>Find your location</h1>
+        <button class="btn btn-primary btn-block" id="find-me">Show my location</button><br />
+        <p id="status"></p>
+        <a class="btn btn-primary stretched-link invisible"  id="map-link"></a>
+    </div>
 
-            const status = document.querySelector('#status');
-            const mapLink = document.querySelector('#map-link');
 
-            mapLink.href = '';
-            mapLink.textContent = '';
+        <script>
+            function geoFindMe() {
 
-            function success(position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
+                const status = document.querySelector('#status');
+                const mapLink = document.querySelector('#map-link');
 
-                status.textContent = '';
-                mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-                mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+                mapLink.href = '';
+                mapLink.textContent = '';
+
+                function success(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    status.textContent = '';
+                    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+                    mapLink.textContent += ` Go to location: Latitude: ${latitude} °, Longitude: ${longitude} °`;
+                    mapLink.classList.remove("invisible");
+                }
+
+                function error() {
+                    status.textContent = 'Unable to retrieve your location';
+                }
+
+                if (!navigator.geolocation) {
+                    status.textContent = 'Geolocation is not supported by your browser';
+                } else {
+                    status.textContent = 'Locating…';
+                    navigator.geolocation.getCurrentPosition(success, error);
+                }
+
             }
 
-            function error() {
-                status.textContent = 'Unable to retrieve your location';
-            }
+            document.querySelector('#find-me').addEventListener('click', geoFindMe);
 
-            if (!navigator.geolocation) {
-                status.textContent = 'Geolocation is not supported by your browser';
-            } else {
-                status.textContent = 'Locating…';
-                navigator.geolocation.getCurrentPosition(success, error);
-            }
-
-        }
-
-        document.querySelector('#find-me').addEventListener('click', geoFindMe);
-
-    </script>
+        </script>
+    </div>
 
 
 
