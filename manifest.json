@@ -28,6 +28,7 @@
     }],
   "lang": "en-US",
   "start_url": "/zadanie_4_JS_2022/",
+  "scope": "/zadanie_4_JS_2022/",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white"
